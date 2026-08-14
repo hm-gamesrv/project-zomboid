@@ -1,0 +1,50 @@
+{
+    "schemaVersion": 1,
+    "key": "project-zomboid",
+    "name": "Project Zomboid",
+    "registries": {
+        "ghcr": "ghcr.io/hm-gamesrv/",
+        "aliyun": "crpi-i9e7zrpnu4792a5m.cn-chengdu.personal.cr.aliyuncs.com/hiromuraki/"
+    },
+    "resources": {
+        "ports": [
+            {
+                "host": "16261",
+                "container": "16261",
+                "proto": "udp",
+                "required": true,
+                "desc": "游戏联机端口"
+            },
+            {
+                "host": "16262",
+                "container": "16262",
+                "proto": "udp",
+                "desc": "Direct Connection Port，直连相关端口"
+            }
+        ],
+        "volumes": [
+            {
+                "host": "./app",
+                "container": "/app",
+                "required": true,
+                "desc": "游戏本体目录（首次启动自动下载）"
+            },
+            {
+                "host": "./data",
+                "container": "/data",
+                "required": true,
+                "desc": "存档数据目录"
+            }
+        ],
+        "env": [],
+        "extraArgs": ""
+    },
+    "variants": [
+        {
+            "key": "latest",
+            "name": "最新正式版",
+            "tag": "latest",
+            "container": "project-zomboid-server"
+        }
+    ]
+}
