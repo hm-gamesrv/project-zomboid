@@ -24,13 +24,13 @@
         ],
         "volumes": [
             {
-                "host": "./app",
+                "host": "./project-zomboid-app",
                 "container": "/app",
                 "required": true,
                 "desc": "游戏本体目录（首次启动自动下载）"
             },
             {
-                "host": "./data",
+                "host": "./project-zomboid-data",
                 "container": "/data",
                 "required": true,
                 "desc": "存档数据目录"
